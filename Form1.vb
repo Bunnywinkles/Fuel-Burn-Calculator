@@ -15,11 +15,21 @@
         Dim Ascent As Integer
         Dim FuelCost As Double
         Dim PaxCost As Double
+        Dim EcoSeats As Integer
+        Dim BusSeats As Integer
+        Dim FCSeats As Integer
+        Dim YCost As Double
+        Dim JCost As Double
+        Dim FCost As Double
+        Dim CrewCosts As Double
 
         ACCap = AircraftCapacity.Value
         ACFB = AircraftFuelBurn.Value
         FHour = FlightHours.Value
         FMinute = FlightMinutes.Value
+        EcoSeats = YSeats.Value
+        BusSeats = JSeats.Value
+        FCSeats = FSeats.Value
 
         FMinute = (FHour * 60) + FMinute
 
@@ -32,11 +42,22 @@
 
         PaxCost = FuelCost / ACCap
 
-        lblResult.Text = "Total Fuel Cost:" & vbCrLf & FormatCurrency(FuelCost, 2) & vbCrLf & vbCrLf & "Cost per Passanger:" & vbCrLf & FormatCurrency(PaxCost, 2)
+        YCost = (1 * EcoSeats * FMinute / 60 * 12)
+        JCost = (2 * BusSeats * FMinute / 60 * 12)
+        FCost = (3 * FCSeats * FMinute / 60 * 12)
+
+        CrewCosts = YCost + JCost + FCost
+
+
+        lblResult.Text = "Total Fuel Cost:" & vbCrLf & FormatCurrency(FuelCost, 2) & vbCrLf & vbCrLf & "Cost per Passanger:" & vbCrLf & FormatCurrency(PaxCost, 2) & vbCrLf & vbCrLf & "Crew Costs" & vbCrLf & FormatCurrency(CrewCosts, 2)
 
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
 
     End Sub
 End Class
