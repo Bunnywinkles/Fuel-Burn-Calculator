@@ -44,6 +44,15 @@ Partial Class Form1
         Me.lblFuelCosts = New System.Windows.Forms.Label()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.lblCrewCosts = New System.Windows.Forms.Label()
+        Me.cbACSize = New System.Windows.Forms.ComboBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.cbOriginSize = New System.Windows.Forms.ComboBox()
+        Me.cbDestSize = New System.Windows.Forms.ComboBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.GroupBox7 = New System.Windows.Forms.GroupBox()
+        Me.lblAPFees = New System.Windows.Forms.Label()
         CType(Me.FlightHours, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FlightMinutes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -56,6 +65,8 @@ Partial Class Form1
         CType(Me.AircraftCapacity, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
+        Me.GroupBox6.SuspendLayout()
+        Me.GroupBox7.SuspendLayout()
         Me.SuspendLayout()
         '
         'FlightHours
@@ -115,6 +126,7 @@ Partial Class Form1
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Label8)
         Me.GroupBox2.Controls.Add(Me.GroupBox4)
         Me.GroupBox2.Controls.Add(Me.AircraftCapacity)
         Me.GroupBox2.Controls.Add(Me.Label4)
@@ -137,7 +149,7 @@ Partial Class Form1
         Me.GroupBox4.Controls.Add(Me.Label5)
         Me.GroupBox4.Location = New System.Drawing.Point(9, 58)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(263, 43)
+        Me.GroupBox4.Size = New System.Drawing.Size(204, 43)
         Me.GroupBox4.TabIndex = 9
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Seats"
@@ -221,7 +233,7 @@ Partial Class Form1
         '
         'btnCalculate
         '
-        Me.btnCalculate.Location = New System.Drawing.Point(325, 161)
+        Me.btnCalculate.Location = New System.Drawing.Point(322, 167)
         Me.btnCalculate.Name = "btnCalculate"
         Me.btnCalculate.Size = New System.Drawing.Size(75, 23)
         Me.btnCalculate.TabIndex = 7
@@ -264,11 +276,100 @@ Partial Class Form1
         Me.lblCrewCosts.Size = New System.Drawing.Size(0, 13)
         Me.lblCrewCosts.TabIndex = 0
         '
+        'cbACSize
+        '
+        Me.cbACSize.FormattingEnabled = True
+        Me.cbACSize.Items.AddRange(New Object() {"Light", "Regional", "Small", "Medium", "Large", "X-Large", "Jumbo"})
+        Me.cbACSize.Location = New System.Drawing.Point(231, 156)
+        Me.cbACSize.Name = "cbACSize"
+        Me.cbACSize.Size = New System.Drawing.Size(53, 21)
+        Me.cbACSize.TabIndex = 10
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(219, 58)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(27, 13)
+        Me.Label8.TabIndex = 10
+        Me.Label8.Text = "Size"
+        '
+        'GroupBox6
+        '
+        Me.GroupBox6.Controls.Add(Me.Label10)
+        Me.GroupBox6.Controls.Add(Me.Label9)
+        Me.GroupBox6.Controls.Add(Me.cbDestSize)
+        Me.GroupBox6.Controls.Add(Me.cbOriginSize)
+        Me.GroupBox6.Location = New System.Drawing.Point(12, 196)
+        Me.GroupBox6.Name = "GroupBox6"
+        Me.GroupBox6.Size = New System.Drawing.Size(161, 59)
+        Me.GroupBox6.TabIndex = 11
+        Me.GroupBox6.TabStop = False
+        Me.GroupBox6.Text = "Airport Information"
+        '
+        'cbOriginSize
+        '
+        Me.cbOriginSize.FormattingEnabled = True
+        Me.cbOriginSize.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9"})
+        Me.cbOriginSize.Location = New System.Drawing.Point(9, 31)
+        Me.cbOriginSize.Name = "cbOriginSize"
+        Me.cbOriginSize.Size = New System.Drawing.Size(35, 21)
+        Me.cbOriginSize.TabIndex = 0
+        '
+        'cbDestSize
+        '
+        Me.cbDestSize.FormattingEnabled = True
+        Me.cbDestSize.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9"})
+        Me.cbDestSize.Location = New System.Drawing.Point(72, 31)
+        Me.cbDestSize.Name = "cbDestSize"
+        Me.cbDestSize.Size = New System.Drawing.Size(37, 21)
+        Me.cbDestSize.TabIndex = 1
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(6, 15)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(57, 13)
+        Me.Label9.TabIndex = 2
+        Me.Label9.Text = "Origin Size"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(69, 15)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(83, 13)
+        Me.Label10.TabIndex = 3
+        Me.Label10.Text = "Destination Size"
+        '
+        'GroupBox7
+        '
+        Me.GroupBox7.Controls.Add(Me.lblAPFees)
+        Me.GroupBox7.Location = New System.Drawing.Point(179, 196)
+        Me.GroupBox7.Name = "GroupBox7"
+        Me.GroupBox7.Size = New System.Drawing.Size(389, 59)
+        Me.GroupBox7.TabIndex = 12
+        Me.GroupBox7.TabStop = False
+        Me.GroupBox7.Text = "Airport Fees"
+        '
+        'lblAPFees
+        '
+        Me.lblAPFees.AutoSize = True
+        Me.lblAPFees.Location = New System.Drawing.Point(7, 15)
+        Me.lblAPFees.Name = "lblAPFees"
+        Me.lblAPFees.Size = New System.Drawing.Size(45, 13)
+        Me.lblAPFees.TabIndex = 0
+        Me.lblAPFees.Text = "Label11"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(571, 196)
+        Me.ClientSize = New System.Drawing.Size(571, 262)
+        Me.Controls.Add(Me.GroupBox7)
+        Me.Controls.Add(Me.GroupBox6)
+        Me.Controls.Add(Me.cbACSize)
         Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.btnCalculate)
@@ -293,6 +394,10 @@ Partial Class Form1
         Me.GroupBox3.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
+        Me.GroupBox6.ResumeLayout(False)
+        Me.GroupBox6.PerformLayout()
+        Me.GroupBox7.ResumeLayout(False)
+        Me.GroupBox7.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -319,4 +424,13 @@ Partial Class Form1
     Friend WithEvents FSeats As NumericUpDown
     Friend WithEvents GroupBox5 As GroupBox
     Friend WithEvents lblCrewCosts As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents cbACSize As ComboBox
+    Friend WithEvents GroupBox6 As GroupBox
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents cbDestSize As ComboBox
+    Friend WithEvents cbOriginSize As ComboBox
+    Friend WithEvents GroupBox7 As GroupBox
+    Friend WithEvents lblAPFees As Label
 End Class
