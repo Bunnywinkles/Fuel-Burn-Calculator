@@ -25,7 +25,7 @@
 
         If FMinute < 90 Then
             Ascent = FMinute / 2
-            FuelCost = ACFB * 10 * Ascent + ACFB * Ascent * 0.08 * 1
+            FuelCost = (ACFB * 10 * Ascent + ACFB * Ascent) * 0.08 * 1
         Else
             FuelCost = ((ACFB * 10 * 45 + ACFB * (FMinute - 30)) * 0.08 * 1) * (0.7 + 0.3 * 1)
         End If
