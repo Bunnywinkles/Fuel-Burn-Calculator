@@ -1,19 +1,7 @@
 ﻿Public Class Form1
     Private Sub btnCalculate_Click(sender As Object, e As EventArgs) Handles btnCalculate.Click
-        Dim ACCap As Integer
-        Dim ACFB As Integer
-        Dim FHour As Integer
-        Dim FMinute As Integer
-        Dim Ascent As Integer
-        Dim FuelCost As Double
-        Dim PaxCost As Double
-        Dim EcoSeats As Integer
-        Dim BusSeats As Integer
-        Dim FCSeats As Integer
-        Dim YCost As Double
-        Dim JCost As Double
-        Dim FCost As Double
-        Dim CrewCosts As Double
+        Dim ACCap, ACFB, FHour, FMinute, Ascent, EcoSeats, BusSeats, FCSeats As Integer
+        Dim FuelCost, PaxCost, YCost, JCost, FCost, CrewCosts As Double
 
         ACCap = AircraftCapacity.Value
         ACFB = AircraftFuelBurn.Value
