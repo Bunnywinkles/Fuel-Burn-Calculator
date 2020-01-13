@@ -1,12 +1,4 @@
 ﻿Public Class Form1
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
-
-    End Sub
-
-    Private Sub GroupBox3_Enter(sender As Object, e As EventArgs) Handles GroupBox3.Enter
-
-    End Sub
-
     Private Sub btnCalculate_Click(sender As Object, e As EventArgs) Handles btnCalculate.Click
         Dim ACCap As Integer
         Dim ACFB As Integer
@@ -50,14 +42,6 @@
 
 
         lblResult.Text = "Total Fuel Cost:" & vbCrLf & FormatCurrency(FuelCost, 2) & vbCrLf & vbCrLf & "Cost per Passanger:" & vbCrLf & FormatCurrency(PaxCost, 2) & vbCrLf & vbCrLf & "Crew Costs" & vbCrLf & FormatCurrency(CrewCosts, 2)
-
-    End Sub
-
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
-    Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
 
     End Sub
 End Class
