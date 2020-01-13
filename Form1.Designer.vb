@@ -29,30 +29,33 @@ Partial Class Form1
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.AircraftFuelBurn = New System.Windows.Forms.NumericUpDown()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.FSeats = New System.Windows.Forms.NumericUpDown()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.JSeats = New System.Windows.Forms.NumericUpDown()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.YSeats = New System.Windows.Forms.NumericUpDown()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.AircraftCapacity = New System.Windows.Forms.NumericUpDown()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnCalculate = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.lblResult = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.YSeats = New System.Windows.Forms.NumericUpDown()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.JSeats = New System.Windows.Forms.NumericUpDown()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.FSeats = New System.Windows.Forms.NumericUpDown()
+        Me.lblFuelCosts = New System.Windows.Forms.Label()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.lblCrewCosts = New System.Windows.Forms.Label()
         CType(Me.FlightHours, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FlightMinutes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.AircraftFuelBurn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
+        Me.GroupBox4.SuspendLayout()
+        CType(Me.FSeats, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.JSeats, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.YSeats, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AircraftCapacity, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
-        Me.GroupBox4.SuspendLayout()
-        CType(Me.YSeats, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.JSeats, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.FSeats, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox5.SuspendLayout()
         Me.SuspendLayout()
         '
         'FlightHours
@@ -124,6 +127,72 @@ Partial Class Form1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Aircraft Information"
         '
+        'GroupBox4
+        '
+        Me.GroupBox4.Controls.Add(Me.FSeats)
+        Me.GroupBox4.Controls.Add(Me.Label7)
+        Me.GroupBox4.Controls.Add(Me.JSeats)
+        Me.GroupBox4.Controls.Add(Me.Label6)
+        Me.GroupBox4.Controls.Add(Me.YSeats)
+        Me.GroupBox4.Controls.Add(Me.Label5)
+        Me.GroupBox4.Location = New System.Drawing.Point(9, 58)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(263, 43)
+        Me.GroupBox4.TabIndex = 9
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "Seats"
+        '
+        'FSeats
+        '
+        Me.FSeats.Location = New System.Drawing.Point(152, 16)
+        Me.FSeats.Maximum = New Decimal(New Integer() {250, 0, 0, 0})
+        Me.FSeats.Name = "FSeats"
+        Me.FSeats.Size = New System.Drawing.Size(38, 20)
+        Me.FSeats.TabIndex = 13
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(133, 18)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(13, 13)
+        Me.Label7.TabIndex = 12
+        Me.Label7.Text = "F"
+        '
+        'JSeats
+        '
+        Me.JSeats.Location = New System.Drawing.Point(89, 16)
+        Me.JSeats.Maximum = New Decimal(New Integer() {500, 0, 0, 0})
+        Me.JSeats.Name = "JSeats"
+        Me.JSeats.Size = New System.Drawing.Size(38, 20)
+        Me.JSeats.TabIndex = 11
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(71, 18)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(12, 13)
+        Me.Label6.TabIndex = 10
+        Me.Label6.Text = "J"
+        '
+        'YSeats
+        '
+        Me.YSeats.Location = New System.Drawing.Point(26, 16)
+        Me.YSeats.Maximum = New Decimal(New Integer() {1000, 0, 0, 0})
+        Me.YSeats.Name = "YSeats"
+        Me.YSeats.Size = New System.Drawing.Size(38, 20)
+        Me.YSeats.TabIndex = 9
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(6, 18)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(14, 13)
+        Me.Label5.TabIndex = 8
+        Me.Label5.Text = "Y"
+        '
         'AircraftCapacity
         '
         Me.AircraftCapacity.Location = New System.Drawing.Point(145, 32)
@@ -152,7 +221,7 @@ Partial Class Form1
         '
         'btnCalculate
         '
-        Me.btnCalculate.Location = New System.Drawing.Point(325, 18)
+        Me.btnCalculate.Location = New System.Drawing.Point(325, 161)
         Me.btnCalculate.Name = "btnCalculate"
         Me.btnCalculate.Size = New System.Drawing.Size(75, 23)
         Me.btnCalculate.TabIndex = 7
@@ -161,93 +230,46 @@ Partial Class Form1
         '
         'GroupBox3
         '
-        Me.GroupBox3.Controls.Add(Me.lblResult)
-        Me.GroupBox3.Location = New System.Drawing.Point(296, 47)
+        Me.GroupBox3.Controls.Add(Me.lblFuelCosts)
+        Me.GroupBox3.Location = New System.Drawing.Point(302, 12)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(129, 143)
+        Me.GroupBox3.Size = New System.Drawing.Size(130, 143)
         Me.GroupBox3.TabIndex = 8
         Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Results"
+        Me.GroupBox3.Text = "Fuel Costs"
         '
-        'lblResult
+        'lblFuelCosts
         '
-        Me.lblResult.AutoSize = True
-        Me.lblResult.Location = New System.Drawing.Point(6, 16)
-        Me.lblResult.Name = "lblResult"
-        Me.lblResult.Size = New System.Drawing.Size(0, 13)
-        Me.lblResult.TabIndex = 0
+        Me.lblFuelCosts.AutoSize = True
+        Me.lblFuelCosts.Location = New System.Drawing.Point(6, 16)
+        Me.lblFuelCosts.Name = "lblFuelCosts"
+        Me.lblFuelCosts.Size = New System.Drawing.Size(0, 13)
+        Me.lblFuelCosts.TabIndex = 0
         '
-        'Label5
+        'GroupBox5
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(6, 18)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(14, 13)
-        Me.Label5.TabIndex = 8
-        Me.Label5.Text = "Y"
+        Me.GroupBox5.Controls.Add(Me.lblCrewCosts)
+        Me.GroupBox5.Location = New System.Drawing.Point(438, 12)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(130, 178)
+        Me.GroupBox5.TabIndex = 9
+        Me.GroupBox5.TabStop = False
+        Me.GroupBox5.Text = "Crew Costs"
         '
-        'GroupBox4
+        'lblCrewCosts
         '
-        Me.GroupBox4.Controls.Add(Me.FSeats)
-        Me.GroupBox4.Controls.Add(Me.Label7)
-        Me.GroupBox4.Controls.Add(Me.JSeats)
-        Me.GroupBox4.Controls.Add(Me.Label6)
-        Me.GroupBox4.Controls.Add(Me.YSeats)
-        Me.GroupBox4.Controls.Add(Me.Label5)
-        Me.GroupBox4.Location = New System.Drawing.Point(9, 58)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(263, 43)
-        Me.GroupBox4.TabIndex = 9
-        Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "Seats"
-        '
-        'YSeats
-        '
-        Me.YSeats.Location = New System.Drawing.Point(26, 16)
-        Me.YSeats.Maximum = New Decimal(New Integer() {1000, 0, 0, 0})
-        Me.YSeats.Name = "YSeats"
-        Me.YSeats.Size = New System.Drawing.Size(38, 20)
-        Me.YSeats.TabIndex = 9
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(71, 18)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(12, 13)
-        Me.Label6.TabIndex = 10
-        Me.Label6.Text = "J"
-        '
-        'JSeats
-        '
-        Me.JSeats.Location = New System.Drawing.Point(89, 16)
-        Me.JSeats.Maximum = New Decimal(New Integer() {500, 0, 0, 0})
-        Me.JSeats.Name = "JSeats"
-        Me.JSeats.Size = New System.Drawing.Size(38, 20)
-        Me.JSeats.TabIndex = 11
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(133, 18)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(13, 13)
-        Me.Label7.TabIndex = 12
-        Me.Label7.Text = "F"
-        '
-        'FSeats
-        '
-        Me.FSeats.Location = New System.Drawing.Point(152, 16)
-        Me.FSeats.Maximum = New Decimal(New Integer() {250, 0, 0, 0})
-        Me.FSeats.Name = "FSeats"
-        Me.FSeats.Size = New System.Drawing.Size(38, 20)
-        Me.FSeats.TabIndex = 13
+        Me.lblCrewCosts.AutoSize = True
+        Me.lblCrewCosts.Location = New System.Drawing.Point(6, 17)
+        Me.lblCrewCosts.Name = "lblCrewCosts"
+        Me.lblCrewCosts.Size = New System.Drawing.Size(0, 13)
+        Me.lblCrewCosts.TabIndex = 0
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(434, 198)
+        Me.ClientSize = New System.Drawing.Size(571, 196)
+        Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.btnCalculate)
         Me.Controls.Add(Me.GroupBox2)
@@ -261,14 +283,16 @@ Partial Class Form1
         CType(Me.AircraftFuelBurn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox4.PerformLayout()
+        CType(Me.FSeats, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.JSeats, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.YSeats, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AircraftCapacity, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
-        Me.GroupBox4.ResumeLayout(False)
-        Me.GroupBox4.PerformLayout()
-        CType(Me.YSeats, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.JSeats, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.FSeats, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox5.ResumeLayout(False)
+        Me.GroupBox5.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -285,7 +309,7 @@ Partial Class Form1
     Friend WithEvents Label3 As Label
     Friend WithEvents btnCalculate As Button
     Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents lblResult As Label
+    Friend WithEvents lblFuelCosts As Label
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents Label7 As Label
     Friend WithEvents JSeats As NumericUpDown
@@ -293,4 +317,6 @@ Partial Class Form1
     Friend WithEvents YSeats As NumericUpDown
     Friend WithEvents Label5 As Label
     Friend WithEvents FSeats As NumericUpDown
+    Friend WithEvents GroupBox5 As GroupBox
+    Friend WithEvents lblCrewCosts As Label
 End Class

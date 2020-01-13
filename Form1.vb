@@ -11,8 +11,14 @@
 
         funPaxCost(ACCap, FMinute, PaxCost, FuelCost)
         funCrewCosts(YCost, JCost, FCost, CrewCosts, FMinute)
+        funAirportFees()
 
-        lblResult.Text = "Total Fuel Cost:" & vbCrLf & FormatCurrency(FuelCost, 2) & vbCrLf & vbCrLf & "Cost per Passanger:" & vbCrLf & FormatCurrency(PaxCost, 2) & vbCrLf & vbCrLf & "Crew Costs" & vbCrLf & FormatCurrency(CrewCosts, 2)
+        lblFuelCosts.Text = "Total Fuel Cost:" & vbCrLf & FormatCurrency(FuelCost, 2) & vbCrLf & vbCrLf &
+            "Cost per Passanger:" & vbCrLf & FormatCurrency(PaxCost, 2)
+        lblCrewCosts.Text = "Total Crew Costs:" & vbCrLf & FormatCurrency(CrewCosts, 2) & vbCrLf & vbCrLf &
+             "Economy:" & vbCrLf & FormatCurrency(YCost, 2) & vbCrLf & vbCrLf & "Business:" & vbCrLf & FormatCurrency(JCost, 2) _
+             & vbCrLf & vbCrLf & "First:" & vbCrLf & FormatCurrency(FCost, 2)
+
 
     End Sub
 
@@ -46,6 +52,10 @@
         FCost = (3 * FCSeats * FMinute / 60 * 12)
 
         CrewCosts = YCost + JCost + FCost
+
+    End Function
+
+    Function funAirportFees()
 
     End Function
 
