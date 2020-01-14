@@ -1,7 +1,7 @@
 ﻿Public Class Form1
     Public Sub btnCalculate_Click(sender As Object, e As EventArgs) Handles btnCalculate.Click
         Dim ACCap, FHour, FMinute As Integer
-        Dim FuelCost, PaxCost, YCost, JCost, FCost, CrewCosts, DestSlotFees, OriginSlotFees, Landing, APFees As Double
+        Dim FuelCost, PaxCost, YCost, JCost, FCost, CrewCosts, DestSlotFees, OriginSlotFees, DestLanding, OriginLanding, APFees As Double
 
         ACCap = AircraftCapacity.Value
         FHour = FlightHours.Value
@@ -11,15 +11,15 @@
 
         funPaxCost(ACCap, FMinute, PaxCost, FuelCost)
         funCrewCosts(YCost, JCost, FCost, CrewCosts, FMinute)
-        funAirportFees(ACCap, DestSlotFees, Landing, OriginSlotFees, APFees)
+        funAirportFees(ACCap, DestSlotFees, DestLanding, OriginLanding, OriginSlotFees, APFees)
 
         lblFuelCosts.Text = "Total Fuel Cost:" & vbCrLf & FormatCurrency(FuelCost, 2) & vbCrLf & vbCrLf &
             "Cost per Passanger:" & vbCrLf & FormatCurrency(PaxCost, 2)
         lblCrewCosts.Text = "Total Crew Costs:" & vbCrLf & FormatCurrency(CrewCosts, 2) & vbCrLf & vbCrLf &
              "Economy:" & vbCrLf & FormatCurrency(YCost, 2) & vbCrLf & vbCrLf & "Business:" & vbCrLf & FormatCurrency(JCost, 2) _
              & vbCrLf & vbCrLf & "First:" & vbCrLf & FormatCurrency(FCost, 2)
-        lblAPFees.Text = "Origin Fees: " & FormatCurrency(OriginSlotFees, 2) & " Dest Fees: " & FormatCurrency(DestSlotFees, 2) & " Landing\Takeoff Fees: " & FormatCurrency(Landing, 2) _
-            & vbCrLf & "Total Fees: " & FormatCurrency(APFees, 2)
+        lblAPFees.Text = "Origin Fees: " & FormatCurrency(OriginSlotFees, 2) & " Dest Fees: " & FormatCurrency(DestSlotFees, 2) & " Takeoff Fees: " & FormatCurrency(OriginLanding, 2) _
+            & vbCrLf & "Landing Fees: " & FormatCurrency(DestLanding, 2) & " Total Fees: " & FormatCurrency(APFees, 2)
 
 
     End Sub
@@ -57,14 +57,17 @@
 
     End Function
 
-    Function funAirportFees(ACCap, ByRef DestSlotFees, ByRef Landing, ByRef OriginSlotFees, ByRef APFees)
+    Function funAirportFees(ACCap, ByRef DestSlotFees, ByRef DestLanding, ByRef OriginLanding, ByRef OriginSlotFees, ByRef APFees)
 
-        Dim ACSize As String
+        Dim ACSize, OriginBase, DestBase As String
         Dim DestAPSize, OriginAPSize, ACSizeint As Integer
+        Dim DestDiscount, OriginDiscount As Double
 
         ACSize = cbACSize.Text
         DestAPSize = CInt(cbDestSize.Text)
         OriginAPSize = CInt(cbOriginSize.Text)
+        OriginBase = cbOrigin.Text
+        DestBase = cbDest.Text
 
         Select Case DestAPSize
             Case 1
@@ -117,13 +120,40 @@
                 ACSizeint = 18
         End Select
 
-        If ACSizeint <= 3 Then
-            Landing = (3 * ACCap) * 2
+        Select Case DestBase
+            Case "HQ"
+                DestDiscount = 0.5
+            Case "Base"
+                DestDiscount = 0.8
+            Case "None"
+                DestDiscount = 1
+        End Select
+
+        Select Case OriginBase
+            Case "HQ"
+                OriginDiscount = 0.5
+            Case "Base"
+                OriginDiscount = 0.8
+            Case "None"
+                OriginDiscount = 1
+        End Select
+
+        DestSlotFees = DestSlotFees * ACSizeint * DestDiscount
+        OriginSlotFees = OriginSlotFees * ACSizeint * OriginDiscount
+
+        If DestAPSize <= 3 Then
+            DestLanding = (3 * ACCap)
         Else
-            Landing = (ACSizeint * ACCap) * 2
+            DestLanding = (DestAPSize * ACCap)
         End If
 
-        APFees = Landing + OriginSlotFees + DestSlotFees
+        If OriginAPSize <= 3 Then
+            OriginLanding = (3 * ACCap)
+        Else
+            OriginLanding = (OriginAPSize * ACCap)
+        End If
+
+        APFees = DestLanding + OriginLanding + OriginSlotFees + DestSlotFees
 
     End Function
 

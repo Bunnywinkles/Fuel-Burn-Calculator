@@ -53,6 +53,8 @@ Partial Class Form1
         Me.Label10 = New System.Windows.Forms.Label()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
         Me.lblAPFees = New System.Windows.Forms.Label()
+        Me.cbOrigin = New System.Windows.Forms.ComboBox()
+        Me.cbDest = New System.Windows.Forms.ComboBox()
         CType(Me.FlightHours, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FlightMinutes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -296,13 +298,15 @@ Partial Class Form1
         '
         'GroupBox6
         '
+        Me.GroupBox6.Controls.Add(Me.cbDest)
+        Me.GroupBox6.Controls.Add(Me.cbOrigin)
         Me.GroupBox6.Controls.Add(Me.Label10)
         Me.GroupBox6.Controls.Add(Me.Label9)
         Me.GroupBox6.Controls.Add(Me.cbDestSize)
         Me.GroupBox6.Controls.Add(Me.cbOriginSize)
         Me.GroupBox6.Location = New System.Drawing.Point(12, 196)
         Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(161, 59)
+        Me.GroupBox6.Size = New System.Drawing.Size(161, 89)
         Me.GroupBox6.TabIndex = 11
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Airport Information"
@@ -348,7 +352,7 @@ Partial Class Form1
         Me.GroupBox7.Controls.Add(Me.lblAPFees)
         Me.GroupBox7.Location = New System.Drawing.Point(179, 196)
         Me.GroupBox7.Name = "GroupBox7"
-        Me.GroupBox7.Size = New System.Drawing.Size(389, 59)
+        Me.GroupBox7.Size = New System.Drawing.Size(389, 89)
         Me.GroupBox7.TabIndex = 12
         Me.GroupBox7.TabStop = False
         Me.GroupBox7.Text = "Airport Fees"
@@ -358,15 +362,32 @@ Partial Class Form1
         Me.lblAPFees.AutoSize = True
         Me.lblAPFees.Location = New System.Drawing.Point(7, 15)
         Me.lblAPFees.Name = "lblAPFees"
-        Me.lblAPFees.Size = New System.Drawing.Size(45, 13)
+        Me.lblAPFees.Size = New System.Drawing.Size(0, 13)
         Me.lblAPFees.TabIndex = 0
-        Me.lblAPFees.Text = "Label11"
+        '
+        'cbOrigin
+        '
+        Me.cbOrigin.FormattingEnabled = True
+        Me.cbOrigin.Items.AddRange(New Object() {"HQ", "Base", "None"})
+        Me.cbOrigin.Location = New System.Drawing.Point(9, 58)
+        Me.cbOrigin.Name = "cbOrigin"
+        Me.cbOrigin.Size = New System.Drawing.Size(49, 21)
+        Me.cbOrigin.TabIndex = 4
+        '
+        'cbDest
+        '
+        Me.cbDest.FormattingEnabled = True
+        Me.cbDest.Items.AddRange(New Object() {"HQ", "Base", "None"})
+        Me.cbDest.Location = New System.Drawing.Point(72, 58)
+        Me.cbDest.Name = "cbDest"
+        Me.cbDest.Size = New System.Drawing.Size(49, 21)
+        Me.cbDest.TabIndex = 5
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(571, 262)
+        Me.ClientSize = New System.Drawing.Size(571, 290)
         Me.Controls.Add(Me.GroupBox7)
         Me.Controls.Add(Me.GroupBox6)
         Me.Controls.Add(Me.cbACSize)
@@ -433,4 +454,6 @@ Partial Class Form1
     Friend WithEvents cbOriginSize As ComboBox
     Friend WithEvents GroupBox7 As GroupBox
     Friend WithEvents lblAPFees As Label
+    Friend WithEvents cbDest As ComboBox
+    Friend WithEvents cbOrigin As ComboBox
 End Class
